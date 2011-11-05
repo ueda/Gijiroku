@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @minute.title %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @minute.name %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @minute.place %>
+</p>
+
+<p>
+  <b>Scheduled at:</b>
+  <%= @minute.scheduled_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_minute_path(@minute) %> |
+<%= link_to 'Back', minutes_path %>
