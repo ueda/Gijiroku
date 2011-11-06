@@ -30,6 +30,9 @@
   </dl>
   </p>
 
+<% @article = Article.new %>
+<%= render 'form_article' %>
+
 <%= link_to 'Add Article', new_article_path %> |
 <%= link_to 'Edit', edit_minute_path(@minute) %> |
 <%= link_to 'Back', minutes_path %>
