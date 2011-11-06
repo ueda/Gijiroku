@@ -27,6 +27,10 @@
     <%= f.label :scheduled_at %><br />
     <%= f.datetime_select :scheduled_at %>
   </div>
+  <% f.fields_for :article do |a| %>
+    <%= a.label :content %><br />
+    <%= a.text_area :content %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -20,6 +20,16 @@
   <%= @minute.scheduled_at %>
 </p>
 
+  <p>
+  <dl>
+<% @minute.articles.each do |article| %>
+    <li>
+    <%= article.content %><br />(<%= article.created_at %>)
+    </li>
+<% end %>
+  </dl>
+  </p>
 
+<%= link_to 'Add Article', new_article_path %> |
 <%= link_to 'Edit', edit_minute_path(@minute) %> |
 <%= link_to 'Back', minutes_path %>

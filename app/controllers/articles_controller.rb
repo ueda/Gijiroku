@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
+    @minutes = Minute.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +45,8 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        #format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article.minute, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else
         format.html { render action: "new" }
@@ -60,7 +62,8 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        #format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article.minute, notice: 'Article was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
