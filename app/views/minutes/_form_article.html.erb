@@ -20,8 +20,9 @@
     <%= f.number_field :status %>
   </div>
   <div class="field">
-    <%= f.label :minute_id %><br />
-    <%= f.select :minute_id , Minute.all.collect {|m| [m.title, m.id] }, {:include_blank=>'None'}  %>
+    <%# f.label :minute_id %>
+    <%# f.select :minute_id , Minute.all.collect {|m| [m.title+"(#{m.scheduled_at.strftime("%m/%d")})", m.id] }, {:include_blank=>'None'}  %>
+    <%= f.hidden_field :minute_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

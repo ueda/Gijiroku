@@ -14,6 +14,8 @@ class MinutesController < ApplicationController
   # GET /minutes/1.json
   def show
     @minute = Minute.find(params[:id])
+    @article = Article.new
+    @article.minute = @minute
 
     respond_to do |format|
       format.html # show.html.erb

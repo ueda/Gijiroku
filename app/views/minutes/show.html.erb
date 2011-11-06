@@ -1,37 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @minute.title %>
-</p>
+<h1><%= @minute.title %></h1>
 
 <p>
-  <b>Name:</b>
   <%= @minute.name %>
-</p>
-
-<p>
-  <b>Place:</b>
+  /
   <%= @minute.place %>
-</p>
-
-<p>
-  <b>Scheduled at:</b>
+  /
   <%= @minute.scheduled_at %>
 </p>
 
-  <p>
-  <dl>
+<p>
+  <ul>
 <% @minute.articles.each do |article| %>
     <li>
-    <%= article.content %><br />(<%= article.created_at %>)
+    <%= simple_format(article.content) %>
+    <span class="small">(<%= article.created_at %>)</span>
     </li>
 <% end %>
-  </dl>
-  </p>
+  </ul>
+</p>
 
-<% @article = Article.new %>
+<p>
+<h2>Add Article from here.</h2>
 <%= render 'form_article' %>
+</p>
 
 <%= link_to 'Add Article', new_article_path %> |
 <%= link_to 'Edit', edit_minute_path(@minute) %> |
