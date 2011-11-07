@@ -16,6 +16,9 @@
 <% @minute.articles.each do |article| %>
 <tr>
   <td>
+    <%= article.type.name %>
+  </td>
+  <td>
     <%#= simple_format(article.content) %>
     <%= raw hbr(article.content) %>
   </td>

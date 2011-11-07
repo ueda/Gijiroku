@@ -1,4 +1,6 @@
 Gijiroku::Application.routes.draw do
+  resources :types
+
   get "home/index"
 
   resources :articles
