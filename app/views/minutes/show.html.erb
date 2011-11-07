@@ -20,10 +20,11 @@
 <% @minute.articles.each do |article| %>
 <tr>
   <td>
-    <%= simple_format(article.content) %>
+    <%#= simple_format(article.content) %>
+    <%= raw hbr(article.content) %>
   </td>
   <td>
-    <%= article.created_at.strftime("%y-%m-%d %H:%M") %>
+    <%= article.created_at.strftime("%m/%d %H:%M") %>
   </td>
 </tr>
 <% end %>
