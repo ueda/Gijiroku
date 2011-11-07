@@ -16,10 +16,6 @@
     <%= f.text_area :content, :size => "80x3" %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
     <%# f.label :minute_id %>
     <%# f.select :minute_id , Minute.all.collect {|m| [m.title+"(#{m.scheduled_at.strftime("%m/%d")})", m.id] }, {:include_blank=>'None'}  %>
     <%= f.hidden_field :minute_id %>
