@@ -10,22 +10,29 @@
   <%= @minute.scheduled_at %>
 </p>
 
-<p>
-  <ul>
+<table>
+<tr>
+  <th>
+    Contents
+  </th>
+</tr>
+<tbody>
 <% @minute.articles.each do |article| %>
-    <li>
+<tr>
+  <td>
     <%= simple_format(article.content) %>
-    <span class="small">(<%= article.created_at %>)</span>
-    </li>
+  </td>
+  <td>
+    <%= article.created_at.strftime("%y-%m-%d %H:%M") %>
+  </td>
+</tr>
 <% end %>
-  </ul>
-</p>
+</tbody>
+</table>
 
 <p>
 <h2>Add Article from here.</h2>
 <%= render 'form_article' %>
 </p>
-
-<%= link_to 'Add Article', new_article_path %> |
 <%= link_to 'Edit', edit_minute_path(@minute) %> |
 <%= link_to 'Back', minutes_path %>
