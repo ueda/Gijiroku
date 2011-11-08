@@ -16,6 +16,7 @@ class MinutesController < ApplicationController
     @minute = Minute.find(params[:id])
     @article = Article.new
     @article.minute = @minute
+    @type = Type.all
 
     respond_to do |format|
       format.html # show.html.erb

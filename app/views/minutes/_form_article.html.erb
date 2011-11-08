@@ -2,7 +2,6 @@
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
       <ul>
       <% @article.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,11 +11,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :type_id %>
-    <%= f.select :type_id, Type.all.collect {|t| [t.name, t.id] }, {:include_blank=>true} %>
+    <% @type.each do |t| %>
+    <%= f.radio_button :type_id, t.id %> 
+    <%= f.label "type_id_#{t.id}", t.name %>
+    <% end %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%# f.label :content %>
     <%= f.text_area :content, :size => "80x3" %>
   </div>
   <div class="field">
