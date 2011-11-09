@@ -7,18 +7,14 @@
     <th>Place</th>
     <th>Scheduled at</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @minutes.each do |minute| %>
   <tr>
-    <td><%= minute.title %></td>
+    <td><%= link_to minute.title, minute %></td>
     <td><%= minute.name %></td>
     <td><%= minute.place %></td>
     <td><%= minute.scheduled_at %></td>
-    <td><%= link_to 'Show', minute %></td>
-    <td><%= link_to 'Edit', edit_minute_path(minute) %></td>
     <td><%= link_to 'Destroy', minute, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>

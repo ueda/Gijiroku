@@ -28,10 +28,8 @@
 </table>
 
 <% if flash[:warning] or flash[:notice] %>
-<p class="notice"><%= notice %></p>
+<p class="info"><%= notice %></p>
 <% end %>
 <p>
-<%= render 'form_article' %>
+<%= render 'minutes/form_article' %>
 </p>
-<%= link_to 'Edit', edit_minute_path(@minute) %> |
-<%= link_to 'Back', minutes_path %>

@@ -43,6 +43,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     @type = Type.all
+    @minute = @article.minute
 
     respond_to do |format|
       if @article.save
@@ -50,7 +51,8 @@ class ArticlesController < ApplicationController
         format.html { redirect_to @article.minute, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else
-        format.html { render action: "new" }
+        #format.html { render action: "new" }
+        format.html { render "minutes/show" }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
