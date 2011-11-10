@@ -1,10 +1,8 @@
 <h1><%= @minute.title %></h1>
 
 <p>
-  <%= @minute.name %>
-  /
-  <%= @minute.place %>
-  /
+  <%= @minute.attendee %><br />
+  <%= @minute.place %><br />
   <%= @minute.scheduled_at %>
 </p>
 
@@ -12,16 +10,22 @@
 <tbody>
 <% @minute.articles.each do |article| %>
 <tr>
+  <% if article.type.name != "Theme" %>
   <td>
     <%= article.type.name %>
   </td>
   <td>
     <%#= simple_format(article.content) %>
-    <%= raw hbr(article.content) %>
+    <%= hbr(article.content).html_safe %>
   </td>
   <td>
     <%= article.created_at.strftime("%m/%d %H:%M") %>
   </td>
+  <% else %>
+  <th colspan="3">
+    <h2><%= hbr(article.content).html_safe %></h2>
+  </th>
+  <% end %>
 </tr>
 <% end %>
 </tbody>
