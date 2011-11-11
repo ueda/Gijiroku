@@ -1,0 +1,7 @@
+.field_with_errors {
+  padding: 2px;
+  background-color: #fbe3e4;
+  display: inline; 
+  color: #8a1f11;
+}
+
