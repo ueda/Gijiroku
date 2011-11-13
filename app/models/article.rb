@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+
   belongs_to :minute
   belongs_to :type
   validates :minute_id, :presence => true

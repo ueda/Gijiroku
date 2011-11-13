@@ -1,4 +1,6 @@
 class MinutesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /minutes
   # GET /minutes.json
   def index

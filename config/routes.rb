@@ -1,4 +1,6 @@
 Gijiroku::Application.routes.draw do
+  devise_for :users
+
   resources :types
 
   get "home/index"
