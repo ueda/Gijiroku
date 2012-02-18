@@ -33,6 +33,7 @@ gem 'jquery-rails'
 # added by YU
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-openid'
 
 group :test do
   # Pretty printed test output
