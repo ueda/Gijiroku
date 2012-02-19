@@ -1,9 +1,11 @@
 <h1><%= @minute.title %></h1>
-
 <p>
   <%= @minute.attendee %><br />
   <%= @minute.place %><br />
   <%= @minute.scheduled_at %>
+</p>
+<p>
+<%= render 'minutes/form_article' %>
 </p>
 
 <table>
@@ -11,7 +13,7 @@
 <% @minute.articles.each do |article| %>
 <tr>
   <td>
-    <%= article.type.name unless article.type.nil? %>
+    <%= article.type.nil? || article.type.icon_filename.blank?  ? "-" : image_tag( article.type.icon_filename,:alt=>article.type.name ) %>
   </td>
   <td>
     <%#= simple_format(article.content) %>
@@ -25,6 +27,3 @@
 </tbody>
 </table>
 
-<p>
-<%= render 'minutes/form_article' %>
-</p>

@@ -4,7 +4,7 @@ class MinutesController < ApplicationController
   # GET /minutes
   # GET /minutes.json
   def index
-    @minutes = Minute.all
+    @minutes = Minute.all(:order=>"created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
