@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219133617) do
+ActiveRecord::Schema.define(:version => 20120220140206) do
 
   create_table "articles", :force => true do |t|
     t.text     "content"
@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(:version => 20120219133617) do
   create_table "minutes", :force => true do |t|
     t.string   "title"
     t.string   "place"
+    t.string   "attendee"
     t.datetime "scheduled_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "attendee"
+    t.integer  "created_by"
+    t.integer  "updated_by"
   end
 
   create_table "sessions", :force => true do |t|

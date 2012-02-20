@@ -4,7 +4,7 @@ class MinutesController < ApplicationController
   # GET /minutes
   # GET /minutes.json
   def index
-    @minutes = Minute.all(:order=>"created_at desc")
+    @minutes = Minute.all(:order=>"created_at desc",:conditions=>{:created_by=>current_user.id})
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class MinutesController < ApplicationController
   # GET /minutes/1
   # GET /minutes/1.json
   def show
-    @minute = Minute.find(params[:id])
+    @minute = Minute.find(params[:id],:conditions=>{:created_by=>current_user.id})
     @article = Article.new
     @article.minute = @minute
     @type = Type.all
@@ -39,17 +39,18 @@ class MinutesController < ApplicationController
 
   # GET /minutes/1/edit
   def edit
-    @minute = Minute.find(params[:id])
+    @minute = Minute.find(params[:id],:conditions=>{:created_by=>current_user.id})
   end
 
   # POST /minutes
   # POST /minutes.json
   def create
     @minute = Minute.new(params[:minute])
+    @minute.created_by = current_user.id
 
     respond_to do |format|
       if @minute.save
-        format.html { redirect_to @minute, notice: 'Minute was successfully created.' }
+        format.html { redirect_to @minute }
         format.json { render json: @minute, status: :created, location: @minute }
       else
         format.html { render action: "new" }
@@ -61,11 +62,12 @@ class MinutesController < ApplicationController
   # PUT /minutes/1
   # PUT /minutes/1.json
   def update
-    @minute = Minute.find(params[:id])
+    @minute = Minute.find(params[:id],:conditions=>{:created_by=>current_user.id})
+    @minute.updated_by = current_user.id
 
     respond_to do |format|
       if @minute.update_attributes(params[:minute])
-        format.html { redirect_to @minute, notice: 'Minute was successfully updated.' }
+        format.html { redirect_to @minute }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -77,7 +79,7 @@ class MinutesController < ApplicationController
   # DELETE /minutes/1
   # DELETE /minutes/1.json
   def destroy
-    @minute = Minute.find(params[:id])
+    @minute = Minute.find(params[:id],:conditions=>{:created_by=>current_user.id})
     @minute.destroy
 
     respond_to do |format|

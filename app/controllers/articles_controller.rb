@@ -38,6 +38,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @type = Type.all
   end
 
   # POST /articles
@@ -49,11 +50,9 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        #format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.html { redirect_to @article.minute, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article.minute }
         format.json { render json: @article, status: :created, location: @article }
       else
-        #format.html { render action: "new" }
         format.html { render "minutes/show" }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
@@ -67,8 +66,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        #format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.html { redirect_to @article.minute, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article.minute }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -84,7 +82,8 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     respond_to do |format|
-      format.html { redirect_to articles_url }
+      #format.html { redirect_to articles_url }
+      format.html { redirect_to :back  }
       format.json { head :ok }
     end
   end
