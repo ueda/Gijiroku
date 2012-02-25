@@ -1,3 +1,4 @@
+<div class="minutes_header">
 <h1><%= @minute.title %></h1>
 <%= link_to 'Edit', edit_minute_path(@minute) %>
 <p>
@@ -5,6 +6,7 @@
   <%= @minute.place %><br />
   <%= @minute.scheduled_at %>
 </p>
+</div>
 <p>
 <%= render 'minutes/form_article' %>
 </p>

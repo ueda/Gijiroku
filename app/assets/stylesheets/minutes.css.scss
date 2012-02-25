@@ -1,3 +1,13 @@
 // Place all the styles related to the Minutes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.minutes_header {
+}
+.minutes_header h1 {
+  font-size: 1.5em;
+}  
+.minutes_header p {
+  font-size: 0.8em;
+  text-align: right;
+}
+
