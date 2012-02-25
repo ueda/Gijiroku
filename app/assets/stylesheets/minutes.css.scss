@@ -11,3 +11,23 @@
   text-align: right;
 }
 
+.type_icon {
+  width: 32px;
+  height: 32px;
+}
+.type_info {
+  background-image: url(icon_info.png);
+  display: block;
+}
+.type_problem {
+  background-image: url(icon_problem.png);
+  display: block;
+}
+.type_ok {
+  background-image: url(icon_ok.png);
+  display: block;
+}
+.type_todo {
+  background-image: url(icon_todo.png);
+  display: block;
+}

@@ -14,7 +14,7 @@
 
 body {
   font-size: 14px;
-  color: 666;
+  color: #333;
 }
 .container {width: 940px;margin: 0 auto;}
 .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {

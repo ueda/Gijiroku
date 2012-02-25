@@ -15,8 +15,12 @@
 <tbody>
 <% @minute.articles.each do |article| %>
 <tr>
-  <td>
-    <%= article.type.nil? || article.type.icon_filename.blank?  ? "-" : image_tag( article.type.icon_filename,:alt=>article.type.name ) %>
+  <td> 
+    <% if article.type.nil? -%>
+      <div class="type_none"></div>
+    <% else -%>
+      <div class="type_icon type_<%=article.type.name.downcase -%>"></div>
+    <% end -%>
   </td>
   <td>
     <%#= simple_format(article.content) %>
