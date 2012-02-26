@@ -18,5 +18,5 @@ test:
   database: gijiroku_test
   username: root
   password: 
-  socket: /var/lib/mysql/mysql.sock
+  socket: /tmp/mysql.sock
 

@@ -1,13 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  name: MyString
-  place: MyString
+mtg01:
+  title: 
+  place: small meeting room
   scheduled_at: 2011-11-06 00:33:45
 
-two:
-  title: MyString
-  name: MyString
-  place: MyString
+mtg02:
+  title: development team source code review
+  place: large meeting room
   scheduled_at: 2011-11-06 00:33:45
+
