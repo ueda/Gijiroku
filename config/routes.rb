@@ -3,11 +3,11 @@ Gijiroku::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
 
-  resources :types
+#  resources :types
 
   get "home/index"
 
-  resources :articles
+  resources :articles,  :only=>[ :edit, :update, :create, :new , :destroy ]
 
   resources :minutes
 

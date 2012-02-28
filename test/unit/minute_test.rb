@@ -20,4 +20,10 @@ class MinuteTest < ActiveSupport::TestCase
     minute.save
     assert minute.created_by.nil? && minute.updated_by.nil?
   end
+
+  test "should save even if place scheduled_at and attendee are empty" do  
+    minute = minutes(:mtg03)
+    minute.save
+    assert minute.save
+  end 
 end

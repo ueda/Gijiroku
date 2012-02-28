@@ -1,1 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+type_ok:
+  name: Ok
+
+type_info:
+  name: Info
+
+type_todo:
+  name: ToDo
+
+type_problem:
+  name: Problem
+

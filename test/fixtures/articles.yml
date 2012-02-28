@@ -1,2 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+article01: 
+  minute_id:
+  content: This is a test article.
+  type_id: 1 
+
+article02:
+  minute_id: 2
+  content: This is a second test article.
+  type_id: 2
+
+article03:
+  minute_id: 
+  content: This is a third test article.
+  type_id:
+

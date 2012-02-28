@@ -3,10 +3,18 @@
 mtg01:
   title: 
   place: small meeting room
+  attendee: John Doe, John Smith
   scheduled_at: 2011-11-06 00:33:45
 
 mtg02:
   title: development team source code review
   place: large meeting room
+  attendee: John Doe, John Smith
   scheduled_at: 2011-11-06 00:33:45
+
+mtg03:
+  title: development team source code review
+  place: 
+  attendee: 
+  scheduled_at:
 
