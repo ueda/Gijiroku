@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MinutesControllerTest < ActionController::TestCase
   setup do
-    @minute = minutes(:one)
+    @minute = minutes(:mtg01)
   end
 
   test "should get index" do

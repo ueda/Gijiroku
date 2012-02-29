@@ -5,7 +5,7 @@ Gijiroku::Application.routes.draw do
 
 #  resources :types
 
-  get "home/index"
+#  get "home/index"
 
   resources :articles,  :only=>[ :edit, :update, :create, :new , :destroy ]
 
